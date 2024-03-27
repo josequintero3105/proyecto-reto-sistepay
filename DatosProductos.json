@@ -1,0 +1,8 @@
+{
+	"Name": "Pedales",
+	"Price": 120.000,
+	"Quantity": 4,
+	"Description": "Pedales para motocicleta",
+	"Category": "Nombre",
+	"State": "Active"
+}
