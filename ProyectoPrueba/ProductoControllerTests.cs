@@ -14,12 +14,12 @@ using ProyectoBack.Services;
 
 namespace ProyectoPrueba
 {
-    public class ProductoTesting
+    public class ProductoControllerTests
     {
         private readonly ProductoController _productoController;
         private readonly IProductoService _productoService;
 
-        public ProductoTesting()
+        public ProductoControllerTests()
         {
             _productoService = new ProductoService();
             _productoController = new ProductoController(_productoService);

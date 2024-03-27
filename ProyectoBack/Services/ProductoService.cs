@@ -1,4 +1,5 @@
-﻿using MongoDB.Bson;
+﻿using AutoMapper;
+using MongoDB.Bson;
 using MongoDB.Driver;
 using ProyectoBack.Models;
 using ProyectoBack.Repositories;
@@ -8,12 +9,13 @@ namespace ProyectoBack.Services
     public class ProductoService : IProductoService
     {
         internal MongoConnect _connect = new MongoConnect();
-        private IMongoCollection<Producto> Collection; 
+        private IMongoCollection<Producto> Collection;
 
         public ProductoService()
         {
             Collection = _connect.Database.GetCollection<Producto>("Producto");
         }
+
         /// <summary>
         /// Insert a product into the inventory in the database
         /// </summary>

@@ -3,16 +3,18 @@ using ProyectoBack.Models;
 using ProyectoBack.Services;
 using ProyectoBack.Validator;
 using FluentValidation.Results;
+using AutoMapper;
 
 namespace ProyectoBack.Controllers
 {   /// <summary>
     /// 
     /// </summary>
-    [Route("api/[controller]/[action]")] // Este endpoint se encarga de acceder al controlador
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class ProductoController : ControllerBase
     {
         private IProductoService _productoService = new ProductoService();
+        private readonly IMapper _mapper;
         /// <summary>
         /// 
         /// </summary>
@@ -22,6 +24,19 @@ namespace ProyectoBack.Controllers
             _productoService = productoService;
         }
 
+        [HttpPost]
+        public ActionResult MappingProductDB([FromBody] ProductoDTO productoDTO)
+        {
+            var producto = _mapper.Map<ProductoDTO>(productoDTO);
+            var result = SaveProducto(producto);
+            return Ok(result);
+        }
+
+        private string SaveProducto(Producto producto)
+        {
+            return $"{producto.Name}";
+        }
+
         [HttpGet]
         public async Task<IActionResult> GetAllProductos() 
         {
@@ -29,7 +44,7 @@ namespace ProyectoBack.Controllers
         }
 
         /// <summary>
-        /// Obteniendo el producto mediante un ID especifico por GET
+        /// Get the product by id
         /// </summary>
         /// <param name="_id"></param>
         /// <returns></returns>
@@ -63,7 +78,7 @@ namespace ProyectoBack.Controllers
             }
         }
         /// <summary>
-        /// 
+        /// update the data of a product in specific
         /// </summary>
         /// <param name="producto"></param>
         /// <param name="id"></param>
@@ -76,7 +91,7 @@ namespace ProyectoBack.Controllers
             return Created("Updated", true);
         }
         /// <summary>
-        /// 
+        /// Delete the product especifing the id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
