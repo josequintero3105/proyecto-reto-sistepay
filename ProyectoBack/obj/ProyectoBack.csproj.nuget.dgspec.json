@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Git\\proyecto-reto-sistepagos\\ProyectoBack\\ProyectoBack.csproj": {}
+    "C:\\Users\\joquintero\\Documents\\proyecto-reto-sistepagos\\ProyectoBack\\ProyectoBack.csproj": {}
   },
   "projects": {
-    "C:\\Git\\proyecto-reto-sistepagos\\ProyectoBack\\ProyectoBack.csproj": {
+    "C:\\Users\\joquintero\\Documents\\proyecto-reto-sistepagos\\ProyectoBack\\ProyectoBack.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Git\\proyecto-reto-sistepagos\\ProyectoBack\\ProyectoBack.csproj",
+        "projectUniqueName": "C:\\Users\\joquintero\\Documents\\proyecto-reto-sistepagos\\ProyectoBack\\ProyectoBack.csproj",
         "projectName": "ProyectoBack",
-        "projectPath": "C:\\Git\\proyecto-reto-sistepagos\\ProyectoBack\\ProyectoBack.csproj",
+        "projectPath": "C:\\Users\\joquintero\\Documents\\proyecto-reto-sistepagos\\ProyectoBack\\ProyectoBack.csproj",
         "packagesPath": "C:\\Users\\joquintero\\.nuget\\packages\\",
-        "outputPath": "C:\\Git\\proyecto-reto-sistepagos\\ProyectoBack\\obj\\",
+        "outputPath": "C:\\Users\\joquintero\\Documents\\proyecto-reto-sistepagos\\ProyectoBack\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

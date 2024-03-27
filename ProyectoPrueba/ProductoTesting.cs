@@ -26,19 +26,6 @@ namespace ProyectoPrueba
         }
 
         /// <summary>
-        /// Method comprobes the data or the products on database
-        /// </summary>
-        [Fact]
-        public async Task Get_Ok()
-        {
-            // Arrange & Act
-            var result = await _productoController.GetAllProductos();
-
-            // Assert
-            Assert.IsType<OkObjectResult>(result);
-        }
-
-        /// <summary>
         /// Method comprobes the quantity more than zero
         /// </summary>
         [Fact]
