@@ -22,7 +22,7 @@ namespace ProyectoPrueba
         public ProductoControllerTests()
         {
             _productoService = new ProductoService();
-            _productoController = new ProductoController(_productoService);
+            
         }
 
         /// <summary>

@@ -14,28 +14,6 @@ namespace ProyectoBack.Controllers
     public class ProductoController : ControllerBase
     {
         private IProductoService _productoService = new ProductoService();
-        private readonly IMapper _mapper;
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="productoService"></param>
-        public ProductoController(IProductoService productoService)
-        {
-            _productoService = productoService;
-        }
-
-        [HttpPost]
-        public ActionResult MappingProductDB([FromBody] ProductoDTO productoDTO)
-        {
-            var producto = _mapper.Map<ProductoDTO>(productoDTO);
-            var result = SaveProducto(producto);
-            return Ok(result);
-        }
-
-        private string SaveProducto(Producto producto)
-        {
-            return $"{producto.Name}";
-        }
 
         [HttpGet]
         public async Task<IActionResult> GetAllProductos() 
