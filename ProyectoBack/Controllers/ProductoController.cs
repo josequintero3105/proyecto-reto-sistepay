@@ -13,10 +13,10 @@ namespace ProyectoBack.Controllers
     [ApiController]
     public class ProductoController : ControllerBase
     {
-        private IProductoService _productoService = new ProductoService();
+        private readonly IProductoService _productoService = new ProductoService();
 
         [HttpGet]
-        public async Task<IActionResult> GetAllProductos() 
+        public async Task<IActionResult> GetAllProducts() 
         {
             return Ok(await _productoService.GetAllProductos());
         }
@@ -27,7 +27,7 @@ namespace ProyectoBack.Controllers
         /// <param name="_id"></param>
         /// <returns></returns>
         [HttpGet("{_id}")]
-        public async Task<IActionResult> GetProductoById(string _id)
+        public async Task<IActionResult> GetProductById(string _id)
         {
             return Ok(await _productoService.GetProductoById(_id));
         }

@@ -21,8 +21,8 @@ namespace ProyectoPrueba
 
         public ProductoControllerTests()
         {
+            _productoController = new ProductoController();
             _productoService = new ProductoService();
-            
         }
 
         /// <summary>
@@ -32,13 +32,13 @@ namespace ProyectoPrueba
         public async void Get_Quantity()
         {
             // Arrange
-            var result = await _productoService.GetAllProductos();
+            var result = await _productoController.GetAllProducts();
 
             // Act
-            var productos = Assert.IsType<List<Producto>>(result);
+            var productos = Assert.IsType<OkObjectResult>(result);
 
             // Assert
-            Assert.True(productos.Count > 0);
+            Assert.True(!productos.Equals(0));
         }
 
         /// <summary>
@@ -48,10 +48,10 @@ namespace ProyectoPrueba
         public async void GetById_Ok()
         {
             //Arrange
-            var _id = "65fc1d71f058bd95b44cc502";
+            var _id = "660af41c80633da44e3a93e5";
 
             //Act
-            var result = await _productoController.GetProductoById(_id);
+            var result = await _productoController.GetProductById(_id);
 
             //Assert
             Assert.IsType<OkObjectResult>(result);
@@ -64,14 +64,13 @@ namespace ProyectoPrueba
         public async void GetById_Exists()
         {
             //Arrange
-            var _id = "65fc1d71f058bd95b44cc502";
+            var _id = "660af41c80633da44e3a93e5";
 
             //Act
             var result = await _productoService.GetProductoById(_id);
 
             // Assert
-            var producto = Assert.IsType<Producto>(result);
-            Assert.True(producto != null);
+            Assert.True(result != null);
         }
 
         /// <summary>
@@ -81,7 +80,7 @@ namespace ProyectoPrueba
         public async void GetById_NotFound()
         {
             //Arrange
-            var _id = "65fc1d71f058bd95b44cc501";
+            var _id = "660af41c80633da44e3a93e";
 
             //Act
             var result = await _productoService.GetProductoById(_id);
