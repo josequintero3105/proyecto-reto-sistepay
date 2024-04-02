@@ -11,6 +11,7 @@ using ProyectoBack.Controllers;
 using ProyectoBack.Models;
 using ProyectoBack.Repositories;
 using ProyectoBack.Services;
+using Moq;
 
 namespace ProyectoPrueba
 {
@@ -26,19 +27,16 @@ namespace ProyectoPrueba
         }
 
         /// <summary>
-        /// Method comprobes the quantity more than zero
+        /// Method gets all products inserted in the database
         /// </summary>
         [Fact]
-        public async void Get_Quantity()
+        public async void Get_Products()
         {
             // Arrange
-            var result = await _productoController.GetAllProducts();
+            var result = await _productoService.GetAllProductos();
 
             // Act
-            var productos = Assert.IsType<OkObjectResult>(result);
-
-            // Assert
-            Assert.True(!productos.Equals(0));
+            Assert.IsType<List<Producto>>(result);
         }
 
         /// <summary>

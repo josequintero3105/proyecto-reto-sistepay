@@ -22,7 +22,7 @@ namespace ProyectoBack.Controllers
         }
 
         /// <summary>
-        /// Get the product by id
+        /// Get the product by id http://localhost:30388/api/Producto/GetProductById/{id}
         /// </summary>
         /// <param name="_id"></param>
         /// <returns></returns>
@@ -32,7 +32,7 @@ namespace ProyectoBack.Controllers
             return Ok(await _productoService.GetProductoById(_id));
         }
         /// <summary>
-        /// Creating product using fluentvalidations
+        /// Creating product using fluentvalidations http://localhost:30388/api/Producto/CreateProduct
         /// </summary>
         /// <param name="producto"></param>
         /// <returns></returns>
@@ -56,7 +56,7 @@ namespace ProyectoBack.Controllers
             }
         }
         /// <summary>
-        /// update the data of a product in specific
+        /// update the data of a product in specific http://localhost:30388/api/Producto/UpdateProduct?id={id}
         /// </summary>
         /// <param name="producto"></param>
         /// <param name="id"></param>
@@ -73,11 +73,11 @@ namespace ProyectoBack.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        [HttpDelete]
-        public async Task<IActionResult> DeleteProduct(string id)
-        {
-            await _productoService.EliminarProducto(id);
-            return NoContent();
-        }
+        //[HttpDelete]
+        //public async Task<IActionResult> DeleteProduct(string id)
+        //{
+        //    await _productoService.EliminarProducto(id);
+        //    return NoContent();
+        //}
     }
 }

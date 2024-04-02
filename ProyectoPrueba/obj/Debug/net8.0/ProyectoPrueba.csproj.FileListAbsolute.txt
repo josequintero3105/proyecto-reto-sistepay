@@ -375,3 +375,5 @@ C:\Users\joquintero\Documents\proyecto-reto-sistepagos\ProyectoPrueba\obj\Debug\
 C:\Users\joquintero\Documents\proyecto-reto-sistepagos\ProyectoPrueba\obj\Debug\net8.0\ProyectoPrueba.genruntimeconfig.cache
 C:\Users\joquintero\Documents\proyecto-reto-sistepagos\ProyectoPrueba\obj\Debug\net8.0\ref\ProyectoPrueba.dll
 C:\Users\joquintero\Documents\proyecto-reto-sistepagos\ProyectoPrueba\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\joquintero\Documents\proyecto-reto-sistepagos\ProyectoPrueba\bin\Debug\net8.0\Castle.Core.dll
+C:\Users\joquintero\Documents\proyecto-reto-sistepagos\ProyectoPrueba\bin\Debug\net8.0\Moq.dll

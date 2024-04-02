@@ -42,11 +42,11 @@ namespace ProyectoBack.Services
         /// </summary>
         /// <param name="_id"></param>
         /// <returns></returns>
-        public async Task EliminarProducto(string _id)
-        {
-            var IdFinded = Builders<Producto>.Filter.Eq(s => s._id, new ObjectId(_id));
-            await Collection.DeleteOneAsync(IdFinded);
-        }
+        //public async Task EliminarProducto(string _id)
+        //{
+        //    var IdFinded = Builders<Producto>.Filter.Eq(s => s._id, new ObjectId(_id));
+        //    await Collection.DeleteOneAsync(IdFinded);
+        //}
 
         /// <summary>
         /// Select an especific product from the inventory
