@@ -17,13 +17,53 @@ namespace ProyectoPrueba
 {
     public class ProductoControllerTests
     {
-        private readonly ProductoController _productoController;
+        private ProductoController _productoController;
         private readonly IProductoService _productoService;
+        private Producto producto;
 
         public ProductoControllerTests()
         {
             _productoController = new ProductoController();
             _productoService = new ProductoService();
+        }
+
+        /// <summary>
+        /// Method validates an insertion of product
+        /// </summary>
+        [Fact]
+        public void CreateProduct_ProductIsValid()
+        {
+            // Arrange
+            var MockProductService = new Mock<IProductoService>();
+
+            // Act
+            MockProductService.Setup(sp => sp.InsertarProducto(producto));
+            ProductoController _productoController = new ProductoController(MockProductService.Object);
+            var result = _productoController.CreateProduct(producto);
+
+            // Assert
+            Assert.NotNull(result);
+        }
+
+        /// <summary>
+        /// Method validates the update of product
+        /// </summary>
+        [Fact]
+        public void UpdateProduct_ProductIsValid()
+        {
+            // Arrange
+            var MockProductService = new Mock<IProductoService>();
+            string _id = "660af41c80633da44e3a93e5";
+
+            // Act
+            MockProductService.Setup(sp => sp.ActualizarProducto(producto));
+            ProductoController _productoController = new ProductoController(MockProductService.Object);
+            var idFinded = _productoService.GetProductoById(_id);
+            var result = _productoController.UpdateProduct(producto, _id);
+
+            // Assert
+            Assert.True(idFinded != null);
+            Assert.NotNull(result);
         }
 
         /// <summary>
@@ -35,7 +75,7 @@ namespace ProyectoPrueba
             // Arrange
             var result = await _productoService.GetAllProductos();
 
-            // Act
+            // Act & assert
             Assert.IsType<List<Producto>>(result);
         }
 

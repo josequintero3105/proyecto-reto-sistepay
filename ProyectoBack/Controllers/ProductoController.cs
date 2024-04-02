@@ -15,6 +15,16 @@ namespace ProyectoBack.Controllers
     {
         private readonly IProductoService _productoService = new ProductoService();
 
+        public ProductoController(IProductoService productoService)
+        {
+             _productoService = productoService;
+        }
+
+        public ProductoController() 
+        {
+
+        }
+
         [HttpGet]
         public async Task<IActionResult> GetAllProducts() 
         {
